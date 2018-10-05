@@ -5,5 +5,5 @@
 
 Running on docker with jupiter scipy notebook version
 ``` bash
-docker-compose run --rm -p 8888:8888 -v "$PWD":/home/jovyan/work --name notebook jupyter/tensorflow-notebook
+docker-compose up
 ```

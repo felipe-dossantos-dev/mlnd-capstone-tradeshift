@@ -7,3 +7,13 @@ Running on docker with jupiter scipy notebook version
 ``` bash
 docker-compose up
 ```
+
+## TODO
+[X] Write Domain Background
+[ ] Finish Read the papers
+[ ] Write Problem Statement
+[ ] Write Datasets and Inputs
+[ ] Write Solution Statement
+[ ] Write Benchmark Model
+[ ] Write Evaluation Metrics
+[ ] Write Project Design

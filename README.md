@@ -9,18 +9,12 @@ docker-compose up
 ```
 
 ## TODO
+
 [X] Write Domain Background
-
-[ ] Finish Read the papers
-
-[ ] Write Problem Statement
-
+[X] Finish Read the papers
+[X] Write Problem Statement
 [ ] Write Datasets and Inputs
-
 [ ] Write Solution Statement
-
 [ ] Write Benchmark Model
-
 [ ] Write Evaluation Metrics
-
 [ ] Write Project Design

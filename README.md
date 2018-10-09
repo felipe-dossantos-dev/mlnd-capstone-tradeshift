@@ -13,7 +13,8 @@ docker-compose up
 [X] Write Domain Background
 [X] Finish Read the papers
 [X] Write Problem Statement
-[ ] Write Datasets and Inputs
+[X] Write Datasets and Inputs
+[ ] Data analysis of the dataset/inputs
 [ ] Write Solution Statement
 [ ] Write Benchmark Model
 [ ] Write Evaluation Metrics

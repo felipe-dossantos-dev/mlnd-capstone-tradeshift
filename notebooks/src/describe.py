@@ -12,8 +12,16 @@ def read_test_features():
 def create_features_meta(dataframe):
     data = []
     for f in dataframe.columns:
+        # input or id
+        if f == 'target':
+            role = 'target'
+        elif f == 'id':
+            role = 'id'
+        else:
+            role = 'input'
 
         # Defining the category
+        category = 'undefined'
         if dataframe[f].dtype == int or dataframe[f].dtype == float:
             category = 'numerical'
         elif dataframe[f].dtype == object or dataframe[f].dtype == str:
@@ -29,12 +37,13 @@ def create_features_meta(dataframe):
         # Creating a Dict that contains all the metadata for the variable
         f_dict = {
             'varname': f,
+            'role': role,
             'category': category,
             'dtype': dtype
         }
         data.append(f_dict)
 
     meta = pd.DataFrame(
-        data, columns=['varname', 'category', 'dtype'])
+        data, columns=['varname', 'role', 'category', 'dtype'])
     meta.set_index('varname', inplace=True)
     return meta

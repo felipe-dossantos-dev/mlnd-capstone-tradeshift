@@ -17,5 +17,5 @@ docker-compose up
 [ ] Data analysis of the dataset/inputs
 [ ] Write Solution Statement
 [X] Write Benchmark Model
-[ ] Write Evaluation Metrics
+[X] Write Evaluation Metrics
 [ ] Write Project Design

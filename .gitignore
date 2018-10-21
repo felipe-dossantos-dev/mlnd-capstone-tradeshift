@@ -108,3 +108,6 @@ data/
 
 # other paper related to the project
 related-works/
+
+#tex files generated on the export to pdf
+*.tex

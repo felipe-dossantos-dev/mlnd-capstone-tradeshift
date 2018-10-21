@@ -3,10 +3,15 @@
 
 ## Running on docker
 
-Running on docker with jupiter scipy notebook version
+Running on docker with the image jupiter scipy notebook version
 ``` bash
 docker-compose up
 ```
+
+## Dataset
+
+Download the dataset on https://www.kaggle.com/c/tradeshift-text-classification/data and put the data on 
+data/raw folder inside the project folder.
 
 ## TODO
 
@@ -14,8 +19,8 @@ docker-compose up
 [X] Finish Read the papers
 [X] Write Problem Statement
 [X] Write Datasets and Inputs
-[ ] Data analysis of the dataset/inputs
-[ ] Write Solution Statement
+[X] Data analysis of the dataset/inputs
+[X] Write Solution Statement
 [X] Write Benchmark Model
 [X] Write Evaluation Metrics
-[ ] Write Project Design
+[X] Write Project Design

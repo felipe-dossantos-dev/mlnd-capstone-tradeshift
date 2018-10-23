@@ -2,11 +2,11 @@ import pandas as pd
 
 
 def read_train_features():
-    return pd.read_csv('../data/raw/train.csv')
+    return pd.read_csv('../input/train.csv')
 
 
 def read_test_features():
-    return pd.read_csv('../data/raw/test.csv')
+    return pd.read_csv('../input/test.csv')
 
 
 def create_features_meta(dataframe):

@@ -104,7 +104,9 @@ venv.bak/
 .mypy_cache/
 
 # data for the project
-data/
+input/
+working/
+output/
 
 # other paper related to the project
 related-works/

@@ -11,7 +11,7 @@ docker-compose up
 ## Dataset
 
 Download the dataset on https://www.kaggle.com/c/tradeshift-text-classification/data and put the data on 
-data/raw folder inside the project folder.
+input folder inside the project folder.
 
 ## TODO
 

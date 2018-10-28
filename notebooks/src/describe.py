@@ -5,6 +5,10 @@ def read_train_features():
     return pd.read_csv('../input/train.csv')
 
 
+def read_train_labels():
+    return pd.read_csv('../input/trainLabels.csv')
+
+
 def read_test_features():
     return pd.read_csv('../input/test.csv')
 

@@ -13,7 +13,7 @@ docker-compose up
 Download the dataset on https://www.kaggle.com/c/tradeshift-text-classification/data and put the data on 
 input folder inside the project folder.
 
-## TODO
+## TODO - Capstone Proposal
 
 [X] Write Domain Background
 [X] Finish Read the papers
@@ -24,3 +24,22 @@ input folder inside the project folder.
 [X] Write Benchmark Model
 [X] Write Evaluation Metrics
 [X] Write Project Design
+
+## TODO - Capstone Report
+
+[X] Project Overview
+[X] Problem Statement
+[X] Metrics
+[X] Data Exploration - Features only
+[ ] Data exploration - Labels
+[ ] Exploratory Visualization
+[ ] Algorithms and Techniques
+[ ] Benchmark
+[ ] Data Preprocessing
+[ ] Implementation
+[ ] Refinement
+[ ] Model Evaluation and Validation
+[ ] Justification
+[ ] Free-Form Visualization
+[ ] Reflection
+[ ] Improvement

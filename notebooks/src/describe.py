@@ -17,7 +17,7 @@ def create_features_meta(dataframe):
     data = []
     for f in dataframe.columns:
         # input or id
-        if f == 'target':
+        if f.startswith('y'):
             role = 'target'
         elif f == 'id':
             role = 'id'

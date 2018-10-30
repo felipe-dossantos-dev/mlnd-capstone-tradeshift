@@ -31,8 +31,8 @@ input folder inside the project folder.
 [X] Problem Statement
 [X] Metrics
 [X] Data Exploration - Features only
-[ ] Data exploration - Labels
-[ ] Exploratory Visualization
+[X] Data exploration - Labels
+[-] Exploratory Visualization
 [ ] Algorithms and Techniques
 [ ] Benchmark
 [ ] Data Preprocessing

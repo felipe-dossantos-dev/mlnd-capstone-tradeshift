@@ -34,6 +34,7 @@ input folder inside the project folder.
 [X] Data exploration - Labels
 [X] Exploratory Visualization
 [ ] Algorithms and Techniques
+[ ] See the outliers
 [ ] Benchmark
 [ ] Data Preprocessing
 [ ] Implementation

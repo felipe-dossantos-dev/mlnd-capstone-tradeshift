@@ -33,10 +33,10 @@ input folder inside the project folder.
 [X] Data Exploration - Features only
 [X] Data exploration - Labels
 [X] Exploratory Visualization
-[ ] Algorithms and Techniques
-[ ] See the outliers
-[ ] Benchmark
+[X] Algorithms and Techniques
+[X] Benchmark
 [ ] Data Preprocessing
+	[ ] See the outliers - https://towardsdatascience.com/a-brief-overview-of-outlier-detection-techniques-1e0b2c19e561
 [ ] Implementation
 [ ] Refinement
 [ ] Model Evaluation and Validation

@@ -36,7 +36,6 @@ input folder inside the project folder.
 [X] Algorithms and Techniques
 [X] Benchmark
 [ ] Data Preprocessing
-	[ ] See the outliers - https://towardsdatascience.com/a-brief-overview-of-outlier-detection-techniques-1e0b2c19e561
 [ ] Implementation
 [ ] Refinement
 [ ] Model Evaluation and Validation

@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 
 BOOL_FEATURES_MAP = {
     'NO': 0,
@@ -43,3 +44,14 @@ def tranform_content_features(df, columns, uniques):
     df.drop(labels=columns, axis="columns", inplace=True)
     df[columns] = cont_df
     return df
+
+
+def transform_sparse_content_features(df, columns):
+    return pd.get_dummies(df, columns=columns, sparse=True, dtype=bool)
+
+
+def scale_features(df, columns):
+    scaler = StandardScaler()
+    df_scaled = scaler.fit_transform(df[columns])
+    df[columns] = df_scaled
+    return (df, scaler)

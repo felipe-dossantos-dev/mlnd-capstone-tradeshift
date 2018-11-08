@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
 
 BOOL_FEATURES_MAP = {
     'NO': 0,
@@ -11,38 +13,9 @@ BOOL_FEATURES_MAP = {
 
 def tranform_boolean_features(df, columns):
     bool_df = df[columns].applymap(
-        lambda x: BOOL_FEATURES_MAP[x]).astype('bool')
+        lambda x: BOOL_FEATURES_MAP[x]).fillna(0).astype('bool')
     df.drop(labels=columns, axis="columns", inplace=True)
     df[columns] = bool_df[columns]
-    return df
-
-
-def tranform_int_features(df, columns):
-    df[columns] = df[columns].apply(pd.to_numeric,
-                                    downcast='integer', errors='coerce')
-    return df
-
-
-def tranform_float_features(df, columns):
-    df[columns] = df[columns].apply(pd.to_numeric,
-                                    downcast='float', errors='coerce')
-    return df
-
-
-def extract_uniques_words(df, columns):
-    uniques = set()
-    for c in columns:
-        uniques.update(df[c].unique().tolist())
-    return dict(zip(uniques, range(len(uniques))))
-
-
-def tranform_content_features(df, columns, uniques):
-    uniques[np.nan] = -1
-    uniques[float('nan')] = -1
-    cont_df = df[columns].applymap(
-        lambda x: uniques[x] if pd.notnull(x) else -1).astype('int32')
-    df.drop(labels=columns, axis="columns", inplace=True)
-    df[columns] = cont_df
     return df
 
 
@@ -55,3 +28,16 @@ def scale_features(df, columns):
     df_scaled = scaler.fit_transform(df[columns])
     df[columns] = df_scaled
     return (df, scaler)
+
+
+def pca_features(df, columns, n_components, prefix='PCA_'):
+    pca = PCA(n_components=n_components, svd_solver='randomized')
+    data_pca = pca.fit_transform(df[columns])
+
+    df.drop(labels=columns, axis="columns", inplace=True)
+
+    cols_pca_name = [str(prefix) + str(i) for i in range(n_components)]
+    df_pca = pd.DataFrame(data=data_pca, columns=cols_pca_name)
+
+    df = pd.concat([df, df_pca], axis=1)
+    return (df, pca)

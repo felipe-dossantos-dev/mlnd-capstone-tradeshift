@@ -35,7 +35,7 @@ input folder inside the project folder.
 [X] Exploratory Visualization
 [X] Algorithms and Techniques
 [X] Benchmark
-[ ] Data Preprocessing
+[X] Data Preprocessing
 [ ] Implementation
 [ ] Refinement
 [ ] Model Evaluation and Validation

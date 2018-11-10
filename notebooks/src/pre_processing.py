@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
+from sklearn.feature_extraction import DictVectorizer
 
 
 BOOL_FEATURES_MAP = {
@@ -20,7 +21,9 @@ def tranform_boolean_features(df, columns):
 
 
 def transform_sparse_content_features(df, columns):
-    return pd.get_dummies(df, columns=columns, sparse=True, dtype=bool)
+    vec = DictVectorizer()
+    df_vec = vec.fit_transform(df[columns].T.to_dict().values())
+    return df_vec, vec
 
 
 def scale_features(df, columns):

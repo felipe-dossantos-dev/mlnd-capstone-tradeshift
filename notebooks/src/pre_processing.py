@@ -5,18 +5,11 @@ from sklearn.decomposition import PCA
 from sklearn.feature_extraction import DictVectorizer
 
 
-BOOL_FEATURES_MAP = {
-    'NO': 0,
-    'YES': 1,
-    np.nan: np.nan
-}
-
-
 def tranform_boolean_features(df, columns):
-    bool_df = df[columns].applymap(
-        lambda x: BOOL_FEATURES_MAP[x]).fillna(0).astype('bool')
-    df.drop(labels=columns, axis="columns", inplace=True)
-    df[columns] = bool_df[columns]
+    df.replace('YES', 1, inplace = True)
+    df.replace('NO', 0, inplace = True)
+    df[columns] = df[columns].astype(np.float32)
+    df[columns] = df[columns].fillna(0)
     return df
 
 

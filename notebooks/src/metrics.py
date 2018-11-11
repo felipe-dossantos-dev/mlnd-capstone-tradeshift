@@ -1,11 +1,15 @@
-def log_loss(predict, y_value):
-    predict = max(min(predict, 1. - 10e-15), 10e-15)
-    return -log(predict) if y_value == 1. else -log(1. - predict)
+import numpy as np
+
 
 def total_log_loss(y_predict, y_true):
-    loss = 0
-    quantity = 0
-    for pred, y_value in zip(y_predict, y_true):
-        c += 1
-        loss += logloss(pred, y_true)
-    return loss / c
+    y_predict = np.clip(y_predict, 1e-15, 1 - 1e-15)
+    y_true = np.clip(y_true, 1e-15, 1 - 1e-15)
+
+    log_pred = np.log(y_predict)
+    log_pred_1 = np.log(np.subtract(1, y_predict))
+
+    y_true_1 = np.subtract(1, y_true)
+
+    log_values = np.add(np.multiply(y_true, log_pred),
+                        np.multiply(y_true_1, log_pred_1))
+    return - np.mean(log_values, dtype=np.float64)

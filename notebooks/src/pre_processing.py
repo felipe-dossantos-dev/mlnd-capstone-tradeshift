@@ -8,9 +8,9 @@ from sklearn.feature_extraction import DictVectorizer
 def tranform_boolean_features(df, columns):
     df.replace('YES', 1, inplace=True)
     df.replace('NO', 0, inplace=True)
-    df.replace('nan', np.NaN, inplace = True)
-    df[columns] = df[columns].astype(np.float32)
+    df.replace('nan', np.NaN, inplace=True)
     df[columns] = df[columns].fillna(0)
+    df[columns] = df[columns].astype(np.float32)
     return df
 
 
@@ -34,7 +34,7 @@ def pca_features(df, columns, n_components, prefix='PCA_'):
     df.drop(labels=columns, axis="columns", inplace=True)
 
     cols_pca_name = [str(prefix) + str(i) for i in range(n_components)]
-    df_pca = pd.DataFrame(data=data_pca, columns=cols_pca_name)
+    df_pca = pd.DataFrame(data=data_pca, columns=cols_pca_name, index=df.index)
 
     df = pd.concat([df, df_pca], axis=1)
     return (df, pca)

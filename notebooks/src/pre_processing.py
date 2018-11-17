@@ -8,7 +8,6 @@ from sklearn.feature_extraction import DictVectorizer
 def tranform_boolean_features(df, columns):
     df.replace('YES', 1, inplace=True)
     df.replace('NO', 0, inplace=True)
-    df.replace('nan', np.NaN, inplace=True)
     df[columns] = df[columns].fillna(0)
     df[columns] = df[columns].astype(np.float32)
     return df
